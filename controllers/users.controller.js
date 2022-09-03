@@ -2,8 +2,9 @@ let users=require("../models/users.model")
 const {v4:uuidv4}=require("uuid");
 
 // Get All Users
-const getAllUsers=(req,res)=>{     
-    res.status(200).json(users)
+const getAllUsers=(req,res)=>{
+    const {limit}=req.query;     
+    res.status(200).json(users.slice(0,limit))
 };
 
 // Get Random User

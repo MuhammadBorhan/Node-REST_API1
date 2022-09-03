@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 app.use(express.json());
 
-app.use("/users",usersRouter);
+app.use("/user",usersRouter);
 
 // get home route
 app.get("/",(req,res)=>{
