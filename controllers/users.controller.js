@@ -14,24 +14,25 @@ const getRandomUsers=(req,res)=>{
 
 // Save New User
 const saveUsers=(req,res)=>{   
-   const newUser={
-    id:uuidv4(),
-    gender:req.body.gender,
-    name:req.body.name, 
-    contact:req.body.contact, 
-    address:req.body.address, 
-    photoUrl:req.body.photoUrl 
-   };
-   users.push(newUser)  
+//    const newUser={
+//     id:uuidv4(),
+//     gender:req.body.gender,
+//     name:req.body.name, 
+//     contact:req.body.contact, 
+//     address:req.body.address, 
+//     photoUrl:req.body.photoUrl 
+//    };
+   users.push(req.body)  
     res.status(201).json(users)
 };
 
 // Update User
 const updateUser=(req,res)=>{   
    const userId=req.params.id; 
-   const {gender,name,contact,address,photoUrl}=req.body;
+   const {id,gender,name,contact,address,photoUrl}=req.body;
    users.filter((user)=>user.id===userId).map(
     (selectUser)=>{
+        selectUser.id=id;
         selectUser.gender=gender;
         selectUser.name=name;
         selectUser.contact=contact;

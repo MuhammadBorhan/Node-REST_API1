@@ -1,7 +1,7 @@
 const {v4:uuidv4}=require("uuid");
 const users=[
     {
-        id:uuidv4(),
+        id:1,
         gender:"Male",
         name:"Borhan",
         contact:"01620658621",
@@ -10,7 +10,7 @@ const users=[
 
     },
     {
-        id:uuidv4(),
+        id:2,
         gender:"Male",
         name:"Shaon",
         contact:"01775849704",
@@ -19,7 +19,7 @@ const users=[
 
     },
     {
-        id:uuidv4(),
+        id:3,
         gender:"Male",
         name:"Atik",
         contact:"01617181414",
@@ -28,7 +28,7 @@ const users=[
 
     },
     {
-        id:uuidv4(),
+        id:4,
         gender:"Male",
         name:"Nazmul",
         contact:"0133039485",
@@ -37,7 +37,7 @@ const users=[
 
     },
     {
-        id:uuidv4(),
+        id:5,
         gender:"Male",
         name:"Junayed",
         contact:"01738540934",
@@ -46,7 +46,7 @@ const users=[
 
     },
     {
-        id:uuidv4(),
+        id:6,
         gender:"Male",
         name:"Emran",
         contact:"01623949568",
