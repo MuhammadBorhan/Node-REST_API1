@@ -3,7 +3,12 @@ const {v4:uuidv4}=require("uuid");
 
 // Get All Users
 const getAllUsers=(req,res)=>{     
-    res.status(200).json({users})
+    res.status(200).json(users)
+};
+
+// Get Random User
+const getRandomUsers=(req,res)=>{    
+    res.status(200).json(users[Math.floor(Math.random()*users.length)])
 };
 
 // Save New User
@@ -17,7 +22,7 @@ const saveUsers=(req,res)=>{
     photoUrl:req.body.photoUrl 
    };
    users.push(newUser)  
-    res.status(201).json({users})
+    res.status(201).json(users)
 };
 
 // Update User
@@ -42,4 +47,4 @@ const deleteUser=(req,res)=>{
     res.status(200).json(users)
 };
 
-module.exports={getAllUsers,saveUsers,updateUser,deleteUser};
+module.exports={getAllUsers,getRandomUsers,saveUsers,updateUser,deleteUser};
