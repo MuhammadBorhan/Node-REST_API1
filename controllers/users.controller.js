@@ -6,7 +6,7 @@ const getAllUsers=(req,res)=>{
     res.status(200).json({users})
 };
 
-// Get All Users
+// Save New User
 const saveUsers=(req,res)=>{   
    const newUser={
     id:uuidv4(),
@@ -20,4 +20,19 @@ const saveUsers=(req,res)=>{
     res.status(201).json({users})
 };
 
-module.exports={getAllUsers,saveUsers};
+// Update User
+const updateUser=(req,res)=>{   
+   const userId=req.params.id; 
+   const {gender,name,contact,address,photoUrl}=req.body;
+   users.filter((user)=>user.id===userId).map(
+    (selectUser)=>{
+        selectUser.gender=gender;
+        selectUser.name=name;
+        selectUser.contact=contact;
+        selectUser.address=address;
+        selectUser.photoUrl=photoUrl;
+    })
+    res.status(201).json(users)
+};
+
+module.exports={getAllUsers,saveUsers,updateUser};
