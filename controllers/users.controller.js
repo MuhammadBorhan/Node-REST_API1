@@ -32,7 +32,14 @@ const updateUser=(req,res)=>{
         selectUser.address=address;
         selectUser.photoUrl=photoUrl;
     })
-    res.status(201).json(users)
+    res.status(200).json(users)
 };
 
-module.exports={getAllUsers,saveUsers,updateUser};
+// Delete User
+const deleteUser=(req,res)=>{   
+    const userId=req.params.id;
+    users=users.filter(user=>user.id!==userId);
+    res.status(200).json(users)
+};
+
+module.exports={getAllUsers,saveUsers,updateUser,deleteUser};
